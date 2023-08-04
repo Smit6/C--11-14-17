@@ -19,6 +19,10 @@
     ```
     vector<int> product(nums_size, 1);
     ```
+  - Initialize vector of vector
+    ```
+    vector<vector<int>> memoization(rows, vector<int> (cols, 0));
+    ```
   - Add to tail O(1)
     ```
     result.push_back({nums[l], nums[m], nums[r]});
@@ -98,13 +102,49 @@
 
 
 #### Map
--  Find
-    ```
-    if (difference.find(num) != difference.end()) {
-      cout << "found" << endl;
-    } else {
-      cout << "Doesn't exist" << endl;
-    }
-    ```
+  -  Find
+      ```
+      if (difference.find(num) != difference.end()) {
+        cout << "found" << endl;
+      } else {
+        cout << "Doesn't exist" << endl;
+      }
+      ```
 
 
+
+#### Set
+- Convert vector to a set
+  ```
+  set<string> word_set(wordDict.begin(), wordDict.end());
+  ```
+- Insert an element to set
+  ```
+  visited.insert(crs);
+  ```
+- Remove an element from set
+  ```
+  visited.erase(crs);
+  ```
+- Create a set from a vector
+  ```
+  set<int> numsSet(nums.begin(), nums.end());
+  ```
+
+#### Pair
+- Create pair with make pair
+  ```
+  foo = std::make_pair (10,20);
+  ```
+- Create pair
+  ```
+  std::pair <std::string,double> product1;                     // default constructor
+  std::pair <std::string,double> product2 ("tomatoes",2.30);   // value init
+  std::pair <std::string,double> product3 (product2);          // copy constructor
+  ```
+
+#### String
+- Create string
+  ```
+  string result(ret.begin(), ret.end());
+  ```
