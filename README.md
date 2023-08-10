@@ -279,6 +279,70 @@
   - rvalue reference
     - We can pass a removable rvalue, but not an lvalue
     - The function now owns the passed object's data
+- Value categories C++17
+  - lvalue represents persistant object
+  - These occupy memory which is accessible to the programmer
+    - Either on the stack or the heap
+  - They remain valid until they go out of the scope or deleted
+  - Three value categories
+    - Literals
+      - These have no name and cannot be referred to again.
+      - These are called pure rvalues or 'prvalues'
+    - Temporary objects
+      - These represent an object and their data can be moved
+      - They are known as 'xvalues' (x for expiring)
+    - lvalues
+  - Every expression has a type and a value category
+  - lvalue and xvalues are objects
+    - Their dynamic type can be different form their static type
+    - They are collectively known as 'generalized values' or 'gvalues'.
+  - xvalue and prvalue are type of rvalue
+  - Thus, xvalue and lvalue are type of glvalue
+  - xvalue can be visualized as gvalue and rvalue
+- Move operators
+  - C++11 added
+    - Move constructor
+    - Move assignment operator
+  - Called automatically if the passed object is a movable rvalue
+  - Overloads of the copy constructor and assignment operator which take rvalue references
+  - The assignment operator is now called the "copy assignment operator"
+    - To avoid confusion with the move assignment operator
+  - Syntax
+    ```
+    Test(const Test& arg);                // Copy constructor
+    Test(Test&& arg) noexcept;            // Move constructor
+
+    Test& operator=(const Test& arg);
+    Test& operator=(Test&& arg) noexcept; // Move assignment operator
+    ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     
